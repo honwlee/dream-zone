@@ -1,0 +1,11 @@
+%h2 welcome to my dream garden
+%table
+  %tr
+    %th title
+    %th content
+    %th destroy
+  - @blogs.each do |blog|
+    %tr
+      %td= link_to blog.title blog
+      %td= blog.content
+      %td= link_to "destroy"

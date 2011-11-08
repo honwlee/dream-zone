@@ -1,0 +1,17 @@
+%h1 Listing blogs
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @blogs.each do |blog|
+    %tr
+      %td= link_to 'Show', blog
+      %td= link_to 'Edit', edit_blog_path(blog)
+      %td= link_to 'Destroy', blog, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Blog', new_blog_path
