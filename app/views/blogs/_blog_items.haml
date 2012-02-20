@@ -1,0 +1,10 @@
+%table#blog-list
+  %thead
+    %tr
+      %th Title
+      %th Abstract
+  %tbody
+    - @blogs.each do |blog|
+      %tr
+        %td= blog.title
+        %td= blog.abstract

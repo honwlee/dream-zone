@@ -1,11 +1,37 @@
-%h2 welcome to my dream garden
-%table
-  %tr
-    %th title
-    %th content
-    %th destroy
-  - @blogs.each do |blog|
-    %tr
-      %td= link_to blog.title blog
-      %td= blog.content
-      %td= link_to "destroy"
+#header
+  #topmenu
+    %ul
+      %li.active
+        %a{:href => "/home"} Home
+      %li
+        %a{:href => "/blogs"} Blogs
+      %li
+        %a{:href => "/photos"} Pictures
+  .clear
+  %h1#sitename
+    %a{:href => "#"} Dream-Garden
+    %span.desc Is my free world!^_^
+#top-content
+  #topcol
+    %img.rightalign{:alt => "Image Sample", :height => "100", :src => "images/imgsample.jpg", :width => "100"}/
+    %h2 Do what you want to do!
+    %p
+      Now you are in a free world, just believe yourself, you can do everything that you want to do!
+    .clear
+  .clear
+#main-content
+  #col_1
+    %h3.round
+      %a{:href => "/blogs"} Blogs
+    = render '/blogs/blog_items'
+    %a.linkbutton{:href => "/blogs"} Get More
+  #col_2
+    %h3.round
+      %a{:href => '/pictures'} Pictures
+    %p
+      %img.leftalign{:alt => "Image1", :src => "images/img1.jpg"}>/
+      Integer dui diam, lacinia ac, commodo et, molestie id, nibh.  Vestibulum ante ipsum primis in faucibus orci luctus et ultrices  posuere.
+    %a.linkbutton{:href => "/pictures"} Get More
+
+    .clear
+  .clear

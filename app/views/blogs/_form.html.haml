@@ -1,10 +1,9 @@
-= form_for @blog do |f|
-  -if @blog.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@blog.errors.count, "error")} prohibited this blog from being saved:"
-      %ul
-        - @blog.errors.full_messages.each do |msg|
-          %li= msg
+= form_for @blog, :html => {:multipart => true} do |form|
+  %dl.form
+    %dt
+      = form.label :title, "Title："
+    %dd
+      %input#blog_title{:name => "blog[title]", :size => "30", :type => "text", :value => @blog.title}
 
-  .actions
-    = f.submit 'Save'
+    %dd.submit
+      %button{:type => "submit"} 保 存

@@ -1,5 +1,5 @@
 #source 'http://rubygems.org'
-source 'http://production.cf.rubygems.org'
+source 'http://ruby.taobao.org'
 gem 'rails', '3.1.1'
 
 # Bundle edge Rails instead:
@@ -33,13 +33,15 @@ gem 'uuidtools'
 
 #报表
 gem 'spreadsheet' #ecel
+gem 'parseexcel'
+gem 'roo', :git => 'http://github.com/sr3d/roo.git', :branch => 'nokogiri'
 gem 'fastercsv' #csv
 gem 'pdf-reader'
 gem 'prawn'
 
 # WebGL
 gem 'jax'
-#gem 'sprockets', '~> 1.0.2'
+#gem 'sprockets'
 
 # Gems used only for assets and not required
 # in production environments by default.
