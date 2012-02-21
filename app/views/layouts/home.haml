@@ -6,6 +6,25 @@
     = stylesheet_link_tag "application" 
   %body
     #wrap
+      #header
+        #topmenu
+          %ul
+            %li.active
+              %a{:href => "/home"} Home
+            %li
+              %a{:href => "/blogs"} Blogs
+            %li
+              %a{:href => "/photos"} Pictures
+
+            %h1#sitename
+              %a{:href => "#"} Dream-Garden
+              %span.desc Is my free world!^_^
+      #top-content
+        #topcol
+          %img.rightalign{:alt => "Image Sample", :height => "100", :src => "images/imgsample.jpg", :width => "100"}/
+          %h2 Do what you want to do!
+          %p
+            Now you are in a free world, just believe yourself, you can do everything that you want to do!
       = yield
      
       #footer

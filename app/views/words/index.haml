@@ -1,0 +1,17 @@
+#content
+  %h2 words list
+  %table#list-table
+    %thead
+      %tr
+        %th 中文
+        %th 日文
+        %th 词义
+        %th 词性
+    %tbody
+      - @words.each do |word|
+        %tr
+          %td= word.zh_name
+          %td= word.jp_name
+          %td= word.ciyi
+          %td= word.cixing
+  = paginate @words, :outer_window => 1

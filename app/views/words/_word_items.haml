@@ -1,0 +1,14 @@
+%table#list-table
+  %thead
+    %tr
+      %th{:width => "25"} 中文
+      %th{:width => "25"} 日文
+      %th 词义
+      %th{:width => "25"} 词性
+  %tbody
+    - @words.each do |word|
+      %tr
+        %td= word.zh_name
+        %td= word.jp_name
+        %td= word.ciyi
+        %td= word.cixing
