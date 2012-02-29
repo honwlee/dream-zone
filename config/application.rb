@@ -46,6 +46,8 @@ module DreamGarden
     config.generators do |g|
       g.template_engine :haml
     end
+
+    config.autoload_paths += %W(#{config.root}/lib)
     # Enable the asset pipeline
     config.assets.enabled = true
 

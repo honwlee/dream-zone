@@ -1,0 +1,18 @@
+#main-content
+  %h2= @property.name 
+  %table#table-list
+    %thead
+      %tr
+        %th{:width => '50'} 中文
+        %th{:width => '50'} 日文
+        %th 词义
+        %th{:width => '50'} 词性
+    %tbody
+      - @words.each do |word|
+        %tr
+          %td= word.zh_name
+          %td= word.jp_name
+          %td= word.ciyi
+          %td= word.cixing
+  .pagenavi
+    = paginate @words, :outer_window => 1

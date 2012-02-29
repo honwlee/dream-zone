@@ -1,17 +1,17 @@
-%h1 Listing blogs
+#main-content
+  %h2 blogs list
 
-%table
-  %tr
-    %th
-    %th
-    %th
-
-  - @blogs.each do |blog|
+  %table
     %tr
-      %td= link_to 'Show', blog
-      %td= link_to 'Edit', edit_blog_path(blog)
-      %td= link_to 'Destroy', blog, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= link_to 'New Blog', new_blog_path
+      %th 标题
+      %th 查看
+      %th 编辑
+      %th 删除
+    - @blogs.each do |blog|
+      %tr
+        %td= blog.title
+        %td= link_to 'Show', blog
+        %td= link_to 'Edit', edit_blog_path(blog)
+        %td= link_to 'Destroy', blog, :confirm => 'Are you sure?', :method => :delete
+  %br
+  = link_to 'New Blog', new_blog_path

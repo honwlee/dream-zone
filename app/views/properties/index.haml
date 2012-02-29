@@ -1,0 +1,14 @@
+#main-content
+  %h2 words list
+  %table#table-list
+    %thead
+      %tr
+        %th 名称
+        %th 词数
+    %tbody
+      - @properties.each do |property|
+        %tr
+          %td= link_to property.name, property
+          %td= property.words.size
+  .pagenavi
+    = paginate @properties, :outer_window => 1

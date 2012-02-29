@@ -1,12 +1,12 @@
-#content
+#main-content
   %h2 words list
-  %table#list-table
+  %table#table-list
     %thead
       %tr
-        %th 中文
-        %th 日文
+        %th{:width => '50'} 中文
+        %th{:width => '50'} 日文
         %th 词义
-        %th 词性
+        %th{:width => '50'} 词性
     %tbody
       - @words.each do |word|
         %tr
@@ -14,4 +14,5 @@
           %td= word.jp_name
           %td= word.ciyi
           %td= word.cixing
-  = paginate @words, :outer_window => 1
+  .pagenavi
+    = paginate @words, :outer_window => 1

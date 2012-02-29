@@ -4,7 +4,8 @@ DreamGarden::Application.routes.draw do
   mount Jax::Engine => "/jax" unless Rails.env == "production"
 
   resources :blogs
-  resources :words
+  resources :words, :only => ["index","show"]
+  resources :properties, :only => ["index","show"]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
