@@ -1,7 +1,7 @@
 DreamGarden::Application.routes.draw do
   devise_for :users, :path_names => { :sign_up => "register"}
 
-  mount Jax::Engine => "/jax" unless Rails.env == "production"
+  #mount Jax::Engine => "/jax" unless Rails.env == "production"
 
   resources :blogs
   resources :words, :only => ["index","show"]
