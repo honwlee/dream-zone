@@ -30,16 +30,16 @@ namespace :word do
 	end
 
 	task :parse_csv => :environment do
-		Rails.logger.debug 1111111111111111111111111111
-		Rails.logger.debug Rails.root
+		puts 1111111111111111111111111111
+		root_path = Rails.root.to_s + "/public/data/"
 		file_name = ["result.csv","results(1-2).csv"]
 		#file_name = "result.csv"
 		file_name.each do |f_n|
-			CSV.open("data/" + f_n,'r') do |results|
+			CSV.open(root_path + f_n,'r') do |results|
 				i = 0
 				results.each do |v|
 	        word = Word.new
-	        puts v[0] + ',' + v[1] + ',' + v[2] + ',' + v[3]
+	        puts v[0].to_s + ',' + v[1].to_s + ',' + v[2].to_s + ',' + v[3].to_s
 	        word.level = "N1~N2"
 
 		      word.property = Property.find_or_create_by(:name => v[2])

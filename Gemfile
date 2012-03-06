@@ -43,9 +43,9 @@ gem 'prawn'
 # in production environments by default.
 group :assets do
   gem 'sass-rails'
-  #gem 'coffee-rails', '~> 3.1.1'
+ # gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier'
-    gem 'compass-rails'
+  gem 'compass-rails'
 end
 
 gem 'jquery-rails'
