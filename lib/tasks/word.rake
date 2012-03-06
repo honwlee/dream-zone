@@ -30,7 +30,9 @@ namespace :word do
 	end
 
 	task :parse_csv => :environment do
-		root_path = Rails.root + "/public/data/"
+		Rails.logger.debug 1111111111111111111111111111
+		Rails.logger.debug Rails.root
+		root_path = "/data/"
 		file_name = ["result.csv","results(1-2).csv"]
 		#file_name = "result.csv"
 		file_name.each do |f_n|
