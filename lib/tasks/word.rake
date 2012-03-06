@@ -32,11 +32,10 @@ namespace :word do
 	task :parse_csv => :environment do
 		Rails.logger.debug 1111111111111111111111111111
 		Rails.logger.debug Rails.root
-		root_path = "/data/"
 		file_name = ["result.csv","results(1-2).csv"]
 		#file_name = "result.csv"
 		file_name.each do |f_n|
-			CSV.open(root_path + f_n,'r') do |results|
+			CSV.open("data/" + f_n,'r') do |results|
 				i = 0
 				results.each do |v|
 	        word = Word.new
