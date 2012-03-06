@@ -30,33 +30,36 @@ namespace :word do
 	end
 
 	task :parse_csv => :environment do
-		file_name = "results(1-2).csv"
+		root_path = Rails.root + "/public/data/"
+		file_name = ["result.csv","results(1-2).csv"]
 		#file_name = "result.csv"
-		CSV.open(file_name,'r') do |results|
-			i = 0
-			results.each do |v|
-        word = Word.new
-        puts v[0] + ',' + v[1] + ',' + v[2] + ',' + v[3]
-        word.level = "N1~N2"
+		file_name.each do |f_n|
+			CSV.open(root_path + f_n,'r') do |results|
+				i = 0
+				results.each do |v|
+	        word = Word.new
+	        puts v[0] + ',' + v[1] + ',' + v[2] + ',' + v[3]
+	        word.level = "N1~N2"
 
-	      word.property = Property.find_or_create_by(:name => v[2])
-	      
-	      word.save
-	       
-        zh_name = WordName.new(:usage => 0, :content => v[0])
-        word.word_names <<  zh_name unless v[0].blank?
-        
-        jp_name = WordName.new(:usage => 1, :content => v[1])
-	      word.word_names <<  jp_name unless v[1].blank?
+		      word.property = Property.find_or_create_by(:name => v[2])
+		      
+		      word.save
+		       
+	        zh_name = WordName.new(:usage => 0, :content => v[0])
+	        word.word_names <<  zh_name unless v[0].blank?
+	        
+	        jp_name = WordName.new(:usage => 1, :content => v[1])
+		      word.word_names <<  jp_name unless v[1].blank?
 
-	      v[3].split("；").each do |acceptation|
-	      	acceptation = Acceptation.new(:content => acceptation)
-	      	word.acceptations << acceptation
-	      end unless v[3].blank?
+		      v[3].split("；").each do |acceptation|
+		      	acceptation = Acceptation.new(:content => acceptation)
+		      	word.acceptations << acceptation
+		      end unless v[3].blank?
 
-	      puts i
-	      i += 1
-      end
+		      puts i
+		      i += 1
+	      end
+			end
     end
   end
 
