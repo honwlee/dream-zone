@@ -1,6 +1,6 @@
 #source 'http://rubygems.org'
 source 'http://ruby.taobao.org'
-gem 'rails', '3.1.1'
+gem 'rails', '3.2.1'
 gem 'hoe', '2.8.0'
 
 # Bundle edge Rails instead:
@@ -34,22 +34,18 @@ gem 'uuidtools'
 
 #报表
 gem 'spreadsheet' #ecel
-gem 'parseexcel'
 gem 'roo', :git => 'http://github.com/sr3d/roo.git', :branch => 'nokogiri'
 gem 'fastercsv' #csv
 gem 'pdf-reader'
 gem 'prawn'
 
-# WebGL
-gem 'jax'
-#gem 'sprockets'
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.1.4'
-  gem 'coffee-rails', '~> 3.1.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails'
+  #gem 'coffee-rails', '~> 3.1.1'
+  gem 'uglifier'
+    gem 'compass-rails'
 end
 
 gem 'jquery-rails'
